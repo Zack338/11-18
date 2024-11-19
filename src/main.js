@@ -1,7 +1,20 @@
-const paragraphs = window.document.querySelectorAll("p");
+import Form from "./components/form.js";
+import H2 from "./components/h2.js";
 
-console.log(Array.from(paragraphs).map((pTag) => pTag.innerText));
+const app =document.getElementById("app");
 
-const ps = Array.from(paragraphs)
+app.innerHTML = H2("Hello, World!");
+app.innerHTML += Form();
 
-console.log(ps.map((pTage) => pTag.innerText));
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (formSubmissionEvent) =>{
+  formSubmissionEvent.preventDefault();
+
+  console.log(formSubmissionEvent.target.text.value);
+});
+
+ 
+
+
+
